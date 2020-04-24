@@ -31,9 +31,9 @@ impl Iterator for StrSplit {
              self.remainder = &self.remainder[(next_delim ++ self.delimiter.len())..];
              // return until delimiter
              return Some(until_delimiter)
-         } self.remainder.is_empty() {
+         } else ifself.remainder.is_empty() {
              None
-         } else_{
+         } else {
              let rest = self.remainder;
              self.remainder = &[];
              Some(rest)
